@@ -6,7 +6,8 @@
 #include <SimpleFOC.h>
 #include <SimpleFOCDrivers.h>
 
-#define MOTOR_CONTROL_LOOP_RATE_HZ 1000 // 10 kHz
+#define MOTOR_CONTROL_LOOP_INTERVAL_MS 1 // 1000hz
+
 #define ANGLE_KP 10.0
 #define ANGLE_KI 0.0
 #define ANGLE_KD 0.0

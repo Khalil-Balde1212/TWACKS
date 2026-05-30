@@ -101,7 +101,7 @@ namespace MotorControl
                 rightMotor.move(t);
             }
 
-            rtos::ThisThread::sleep_for(std::chrono::milliseconds((int)(1000.0f / MOTOR_CONTROL_LOOP_RATE_HZ))); // ~1 kHz
+            rtos::ThisThread::sleep_for(std::chrono::milliseconds(MOTOR_CONTROL_LOOP_INTERVAL_MS));
         }
     }
 }
