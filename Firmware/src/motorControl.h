@@ -6,7 +6,7 @@
 #include <SimpleFOC.h>
 #include <SimpleFOCDrivers.h>
 
-#define MOTOR_CONTROL_LOOP_INTERVAL_MS 1 // 1000hz
+#define MOTOR_CONTROL_LOOP_INTERVAL_MS 2 // 500hz
 
 #define ANGLE_KP 10.0
 #define ANGLE_KI 0.0
@@ -15,6 +15,8 @@
 #define VELOCITY_KP 0.5
 #define VELOCITY_KI 10.0
 #define VELOCITY_KD 0.0
+
+#define TARGET_DEADBAND 0.02f
 
 namespace MotorControl
 {

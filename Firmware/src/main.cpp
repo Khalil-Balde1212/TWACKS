@@ -3,7 +3,7 @@
 #include "motorControl.h"
 #include "fullstate.h"
 rtos::Thread motorThread(osPriorityRealtime);
-rtos::Thread stateThread(osPriorityRealtime);
+rtos::Thread stateThread(osPriorityHigh);
 rtos::Thread printThread(osPriorityLow);
 
 void setup()
@@ -20,5 +20,6 @@ void setup()
 
 void loop()
 {
+  FullState::drainSerial();
   rtos::ThisThread::yield();
 }

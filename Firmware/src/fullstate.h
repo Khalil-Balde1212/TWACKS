@@ -2,6 +2,8 @@
 #define FULLSTATE_H
 
 #define FULLSTATE_UPDATE_INTERVAL_MS 2 // 500hz
+#define FULLSTATE_PRINT_INTERVAL_MS 200
+#define FULLSTATE_SERIAL_TX_BUF_SIZE 512
 
 #include <ArduinoEigen.h>
 
@@ -21,6 +23,8 @@ namespace FullState
     void setup();
     void task_UpdateState();
     void task_PrintState();
+    void serialPrintln(const char *msg);
+    void drainSerial();
     void reset();
 
 }

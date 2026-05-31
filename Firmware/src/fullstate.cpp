@@ -16,6 +16,50 @@ namespace FullState
 
     float yaw = 0.0f, pitch = 0.0f, roll = 0.0f;
 
+    static char tx_buf[FULLSTATE_SERIAL_TX_BUF_SIZE];
+    static volatile int tx_in = 0;
+    static volatile int tx_out = 0;
+    static rtos::Mutex tx_mutex;
+
+    void serialPrintln(const char *msg)
+    {
+        tx_mutex.lock();
+        for (int i = 0; msg[i] != '\0'; i++)
+        {
+            int next = (tx_in + 1) % FULLSTATE_SERIAL_TX_BUF_SIZE;
+            if (next != tx_out)
+            {
+                tx_buf[tx_in] = msg[i];
+                tx_in = next;
+            }
+        }
+        for (const char *nl = "\r\n"; *nl; nl++)
+        {
+            int next = (tx_in + 1) % FULLSTATE_SERIAL_TX_BUF_SIZE;
+            if (next != tx_out)
+            {
+                tx_buf[tx_in] = *nl;
+                tx_in = next;
+            }
+        }
+        tx_mutex.unlock();
+    }
+
+    void drainSerial()
+    {
+        if (!Serial)
+        {
+            return;
+        }
+
+        int head = tx_in;
+        while (tx_out != head)
+        {
+            Serial.write(tx_buf[tx_out]);
+            tx_out = (tx_out + 1) % FULLSTATE_SERIAL_TX_BUF_SIZE;
+        }
+    }
+
     void setup()
     {
         if (!IMU.begin())
@@ -54,15 +98,10 @@ namespace FullState
     {
         while (true)
         {
-            while (!Serial)
-                ;
-            Serial.print("Yaw: ");
-            Serial.print(yaw);
-            Serial.print(" Pitch: ");
-            Serial.print(pitch);
-            Serial.print(" Roll: ");
-            Serial.println(roll);
-            rtos::ThisThread::sleep_for(std::chrono::milliseconds(100));
+            char buf[64];
+            snprintf(buf, sizeof(buf), "Yaw: %.3f Pitch: %.3f Roll: %.3f", yaw, pitch, roll);
+            serialPrintln(buf);
+            rtos::ThisThread::sleep_for(std::chrono::milliseconds(FULLSTATE_PRINT_INTERVAL_MS));
         }
     }
 }

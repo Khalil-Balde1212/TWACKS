@@ -45,8 +45,8 @@ namespace MotorControl
         rightDriver.voltage_limit = 12;
 
         // filtering
-        leftMotor.LPF_velocity.Tf = 0.05f;
-        rightMotor.LPF_velocity.Tf = 0.05f;
+        leftMotor.LPF_velocity.Tf = 0.2f;
+        rightMotor.LPF_velocity.Tf = 0.2f;
 
         // PID configs =================================================
         leftMotor.P_angle.P = rightMotor.P_angle.P = ANGLE_KP;
@@ -56,8 +56,8 @@ namespace MotorControl
         leftMotor.PID_velocity.I = rightMotor.PID_velocity.I = VELOCITY_KI;
         leftMotor.PID_velocity.D = rightMotor.PID_velocity.D = VELOCITY_KD;
 
-        leftMotor.controller = MotionControlType::angle;
-        rightMotor.controller = MotionControlType::angle;
+        leftMotor.controller = MotionControlType::velocity;
+        rightMotor.controller = MotionControlType::velocity;
 
         leftMotor.voltage_limit = 12;
         rightMotor.voltage_limit = 12;
@@ -89,17 +89,16 @@ namespace MotorControl
             leftSensor.update();
             rightSensor.update();
 
-            target_mutex.lock();
-            float t = target;
-            target_mutex.unlock();
+            float currentTarget = target;
+            if (currentTarget > -TARGET_DEADBAND && currentTarget < TARGET_DEADBAND)
+            {
+                currentTarget = 0.0f;
+            }
 
             leftMotor.loopFOC();
             rightMotor.loopFOC();
-            if (motorEnabled)
-            {
-                leftMotor.move(t);
-                rightMotor.move(t);
-            }
+            leftMotor.move(currentTarget);
+            rightMotor.move(currentTarget);
 
             rtos::ThisThread::sleep_for(std::chrono::milliseconds(MOTOR_CONTROL_LOOP_INTERVAL_MS));
         }
