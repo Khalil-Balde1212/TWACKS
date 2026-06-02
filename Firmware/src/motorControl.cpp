@@ -19,88 +19,95 @@ namespace MotorControl
     bool motorEnabled = true;
 
     // ======================================================================
-    // Setup
-    // ======================================================================
-
-    void setup()
-    {
-        Wire.begin();
-        right_I2C.begin();
-
-        leftSensor.init(&Wire);
-        leftMotor.linkSensor(&leftSensor);
-        leftDriver.init();
-        leftMotor.linkDriver(&leftDriver);
-
-        rightSensor.init(&right_I2C);
-        rightMotor.linkSensor(&rightSensor);
-        rightDriver.init();
-        rightMotor.linkDriver(&rightDriver);
-
-        // Motor Configs =================================================
-        leftDriver.voltage_power_supply = 16;
-        leftDriver.voltage_limit = 12;
-
-        rightDriver.voltage_power_supply = 16;
-        rightDriver.voltage_limit = 12;
-
-        // filtering
-        leftMotor.LPF_velocity.Tf = 0.2f;
-        rightMotor.LPF_velocity.Tf = 0.2f;
-
-        // PID configs =================================================
-        leftMotor.P_angle.P = rightMotor.P_angle.P = ANGLE_KP;
-        leftMotor.P_angle.I = rightMotor.P_angle.I = ANGLE_KI;
-        leftMotor.P_angle.D = rightMotor.P_angle.D = ANGLE_KD;
-        leftMotor.PID_velocity.P = rightMotor.PID_velocity.P = VELOCITY_KP;
-        leftMotor.PID_velocity.I = rightMotor.PID_velocity.I = VELOCITY_KI;
-        leftMotor.PID_velocity.D = rightMotor.PID_velocity.D = VELOCITY_KD;
-
-        leftMotor.controller = MotionControlType::velocity;
-        rightMotor.controller = MotionControlType::velocity;
-
-        leftMotor.voltage_limit = 12;
-        rightMotor.voltage_limit = 12;
-        leftMotor.velocity_limit = 50;
-        rightMotor.velocity_limit = 50;
-        // =================================================================
-
-        leftMotor.init();
-        leftMotor.initFOC();
-        rightMotor.init();
-        rightMotor.initFOC();
-
-        leftMotor.enable();
-        rightMotor.enable();
-
-        target = 0;
-
-        Serial.println("Motor setup complete");
-    }
-
-    // ======================================================================
     // RTOS task
     // ======================================================================
 
     void task_MotorFOC()
     {
+
+        initLeftMotor();
+        // initRightMotor();
+
+        target = 0.0f;
         while (true)
         {
             leftSensor.update();
-            rightSensor.update();
-
-            float currentTarget = target;
-            if (currentTarget > -TARGET_DEADBAND && currentTarget < TARGET_DEADBAND)
-            {
-                currentTarget = 0.0f;
-            }
-
             leftMotor.loopFOC();
-            rightMotor.loopFOC();
-            leftMotor.move(currentTarget);
-            rightMotor.move(currentTarget);
+            leftMotor.move(target);
+
+            // rightSensor.update();
+            // rightMotor.loopFOC();
+            // rightMotor.move(target);
+
+            Serial.println(leftMotor.shaftAngle());
 
             rtos::ThisThread::sleep_for(std::chrono::milliseconds(MOTOR_CONTROL_LOOP_INTERVAL_MS));
         }
+    }
+
+    void initLeftMotor()
+    {
+        Serial.println("Initializing left motor...");
+        Wire.begin();
+        leftSensor.init(&Wire);
+        leftDriver.voltage_power_supply = 16;
+        leftDriver.voltage_limit = 12;
+
+        leftDriver.init();
+        // Serial.println("Left driver initialized");
+
+        leftMotor.P_angle.P = ANGLE_KP;
+        leftMotor.P_angle.I = ANGLE_KI;
+        leftMotor.P_angle.D = ANGLE_KD;
+        leftMotor.PID_velocity.P = VELOCITY_KP;
+        leftMotor.PID_velocity.I = VELOCITY_KI;
+        leftMotor.PID_velocity.D = VELOCITY_KD;
+
+        leftMotor.controller = MotionControlType::velocity;
+
+        leftMotor.voltage_limit = 12;
+        leftMotor.velocity_limit = 50;
+        leftMotor.LPF_velocity.Tf = 0.2f;
+
+        leftMotor.linkSensor(&leftSensor);
+        leftMotor.linkDriver(&leftDriver);
+        // Serial.println("Left motor linked to driver and sensor");
+
+        leftMotor.init();
+        leftMotor.initFOC();
+        leftMotor.enable();
+        // Serial.println("Left motor FOC initialized and enabled");
+        // Serial.println("Left motor initialized");
+    }
+
+    void initRightMotor()
+    {
+        right_I2C.begin();
+        rightSensor.init(&right_I2C);
+
+        rightDriver.voltage_power_supply = 16;
+        rightDriver.voltage_limit = 12;
+
+        rightDriver.init();
+
+        rightMotor.P_angle.P = ANGLE_KP;
+        rightMotor.P_angle.I = ANGLE_KI;
+        rightMotor.P_angle.D = ANGLE_KD;
+        rightMotor.PID_velocity.P = VELOCITY_KP;
+        rightMotor.PID_velocity.I = VELOCITY_KI;
+        rightMotor.PID_velocity.D = VELOCITY_KD;
+
+        rightMotor.controller = MotionControlType::velocity;
+
+        rightMotor.voltage_limit = 12;
+        rightMotor.velocity_limit = 50;
+        rightMotor.LPF_velocity.Tf = 0.2f;
+
+        rightMotor.linkSensor(&rightSensor);
+        rightMotor.linkDriver(&rightDriver);
+
+        rightMotor.init();
+        rightMotor.initFOC();
+        rightMotor.enable();
     }
 }
