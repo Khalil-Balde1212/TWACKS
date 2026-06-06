@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "c31b75b69f86cba7a60e5fc7",
+    "documentMicroversion": "dbd597ed797f2e7778949ec7",
+    "elementId": "8f7aa26592290eb7cc01f73b",
+    "fullConfiguration": "default",
+    "id": "MelQhuR+LYL11Fokl",
+    "isStandardContent": false,
+    "name": "MCU Platform <1>",
+    "partId": "RDCL",
+    "suppressed": false,
+    "type": "Part"
+}

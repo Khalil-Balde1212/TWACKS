@@ -1,0 +1,621 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/c31b75b69f86cba7a60e5fc7/w/78a9ece6d596751f738012d2/e/c7fa50fe5dc467a47ab74165 -->
+<robot name="my-robot">
+  <!-- Link base -->
+  <link name="base">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part right_mount -->
+    <visual>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/right_mount.stl"/>
+      </geometry>
+      <material name="right_mount_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/right_mount.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing -->
+    <visual>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+      <material name="bearing_material">
+        <color rgba="0.701961 0.701961 0.701961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1 -->
+    <visual>
+      <origin xyz="0 -0.000288972 0.00708619" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1.stl"/>
+      </geometry>
+      <material name="part_1_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.000288972 0.00708619" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_2 -->
+    <visual>
+      <origin xyz="-0.16 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+      <material name="bearing_2_material">
+        <color rgba="0.701961 0.701961 0.701961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.16 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_3 -->
+    <visual>
+      <origin xyz="-0.16 0.139 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+      <material name="bearing_3_material">
+        <color rgba="0.701961 0.701961 0.701961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.16 0.139 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_2 -->
+    <visual>
+      <origin xyz="0 0.0491338 0.086117" rpy="-0 -1.45613 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__2.stl"/>
+      </geometry>
+      <material name="part_1_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.0491338 0.086117" rpy="-0 -1.45613 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part rightpillar -->
+    <visual>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/rightpillar.stl"/>
+      </geometry>
+      <material name="rightpillar_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/rightpillar.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part mcu_platform -->
+    <visual>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/mcu_platform.stl"/>
+      </geometry>
+      <material name="mcu_platform_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/mcu_platform.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part bearing_4 -->
+    <visual>
+      <origin xyz="-0.055 0.139 -0.0299199" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+      <material name="bearing_4_material">
+        <color rgba="0.701961 0.701961 0.701961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0.139 -0.0299199" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/bearing.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part leftpillar -->
+    <visual>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/leftpillar.stl"/>
+      </geometry>
+      <material name="leftpillar_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/leftpillar.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base -->
+    <visual>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/base.stl"/>
+      </geometry>
+      <material name="base_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/base.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part left_mount -->
+    <visual>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/left_mount.stl"/>
+      </geometry>
+      <material name="left_mount_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.055 0 -0.0299199" rpy="0 -0 3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/left_mount.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_3 -->
+    <visual>
+      <origin xyz="-0.033 0 0.0815252" rpy="-3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__3.stl"/>
+      </geometry>
+      <material name="part_1_3_material">
+        <color rgba="0.501961 0.501961 0.501961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.033 0 0.0815252" rpy="-3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_4 -->
+    <visual>
+      <origin xyz="0.033 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+      <material name="part_1_4_material">
+        <color rgba="0.85098 0.756863 0.866667 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.033 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_5 -->
+    <visual>
+      <origin xyz="0.033 0 0.120357" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__3.stl"/>
+      </geometry>
+      <material name="part_1_5_material">
+        <color rgba="0.501961 0.501961 0.501961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.033 0 0.120357" rpy="0 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_6 -->
+    <visual>
+      <origin xyz="-0.033 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+      <material name="part_1_6_material">
+        <color rgba="0.85098 0.756863 0.866667 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.033 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_7 -->
+    <visual>
+      <origin xyz="-0.011 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+      <material name="part_1_7_material">
+        <color rgba="0.85098 0.756863 0.866667 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.011 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part part_1_8 -->
+    <visual>
+      <origin xyz="0.011 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+      <material name="part_1_8_material">
+        <color rgba="0.85098 0.756863 0.866667 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.011 0 0.100941" rpy="-1.5708 -0 -3.14159"/>
+      <geometry>
+        <mesh filename="package://assets/part_1__4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link wheelhub -->
+  <link name="wheelhub">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part wheelhub -->
+    <visual>
+      <origin xyz="0 -0 -0.006" rpy="0 0 1.80403"/>
+      <geometry>
+        <mesh filename="package://assets/wheelhub.stl"/>
+      </geometry>
+      <material name="wheelhub_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.006" rpy="0 0 1.80403"/>
+      <geometry>
+        <mesh filename="package://assets/wheelhub.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part tire -->
+    <visual>
+      <origin xyz="0 -0 -0.006" rpy="0 0 1.80403"/>
+      <geometry>
+        <mesh filename="package://assets/tire.stl"/>
+      </geometry>
+      <material name="tire_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 -0.006" rpy="0 0 1.80403"/>
+      <geometry>
+        <mesh filename="package://assets/tire.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff -->
+    <visual>
+      <origin xyz="0.0238995 -0.00989949 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0238995 -0.00989949 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_2 -->
+    <visual>
+      <origin xyz="-0.00410051 -0.00989949 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_2_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00410051 -0.00989949 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part fixed -->
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/fixed.stl"/>
+      </geometry>
+      <material name="fixed_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/fixed.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part pcb -->
+    <visual>
+      <origin xyz="0 0 -0.006" rpy="3.14159 -0 -2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/pcb.stl"/>
+      </geometry>
+      <material name="pcb_material">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.006" rpy="3.14159 -0 -2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/pcb.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part shaft -->
+    <visual>
+      <origin xyz="0 -0 0" rpy="-0 0 1.01863"/>
+      <geometry>
+        <mesh filename="package://assets/shaft.stl"/>
+      </geometry>
+      <material name="shaft_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 0" rpy="-0 0 1.01863"/>
+      <geometry>
+        <mesh filename="package://assets/shaft.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_3 -->
+    <visual>
+      <origin xyz="0.00989949 -0.0238995 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_3_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00989949 -0.0238995 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_4 -->
+    <visual>
+      <origin xyz="0.00989949 0.00410051 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_4_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00989949 0.00410051 -0.0076" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from base to wheelhub -->
+  <joint name="leftWheel" type="revolute">
+    <origin xyz="0.055 0 -0.0299199" rpy="1.5708 -0.114137 1.5708"/>
+    <parent link="base"/>
+    <child link="wheelhub"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link 4015_motor_assembly -->
+  <link name="4015_motor_assembly">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-09"/>
+      <inertia ixx="1e-09" ixy="0" ixz="0" iyy="1e-09" iyz="0" izz="1e-09"/>
+    </inertial>
+    <!-- Part wheelhub_2 -->
+    <visual>
+      <origin xyz="-0 0 0.006" rpy="-3.14159 0 0.495054"/>
+      <geometry>
+        <mesh filename="package://assets/wheelhub.stl"/>
+      </geometry>
+      <material name="wheelhub_2_material">
+        <color rgba="0.917647 0.917647 0.917647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0 0.006" rpy="-3.14159 0 0.495054"/>
+      <geometry>
+        <mesh filename="package://assets/wheelhub.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part tire_2 -->
+    <visual>
+      <origin xyz="-0 0 0.006" rpy="-3.14159 0 0.495054"/>
+      <geometry>
+        <mesh filename="package://assets/tire.stl"/>
+      </geometry>
+      <material name="tire_2_material">
+        <color rgba="0.301961 0.301961 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0 0.006" rpy="-3.14159 0 0.495054"/>
+      <geometry>
+        <mesh filename="package://assets/tire.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_5 -->
+    <visual>
+      <origin xyz="0.0238995 0.00989949 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_5_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0238995 0.00989949 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_6 -->
+    <visual>
+      <origin xyz="-0.00410051 0.00989949 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_6_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.00410051 0.00989949 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part fixed_2 -->
+    <visual>
+      <origin xyz="0 0 0" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/fixed.stl"/>
+      </geometry>
+      <material name="fixed_2_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/fixed.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part pcb_2 -->
+    <visual>
+      <origin xyz="0 -0 0.006" rpy="-0 0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/pcb.stl"/>
+      </geometry>
+      <material name="pcb_2_material">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0 0.006" rpy="-0 0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/pcb.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part shaft_2 -->
+    <visual>
+      <origin xyz="-0 0 0" rpy="3.14159 -0 -1.86114"/>
+      <geometry>
+        <mesh filename="package://assets/shaft.stl"/>
+      </geometry>
+      <material name="shaft_2_material">
+        <color rgba="0.262745 0.282353 0.301961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0 0 0" rpy="3.14159 -0 -1.86114"/>
+      <geometry>
+        <mesh filename="package://assets/shaft.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_7 -->
+    <visual>
+      <origin xyz="0.00989949 0.0238995 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_7_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00989949 0.0238995 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part standoff_8 -->
+    <visual>
+      <origin xyz="0.00989949 -0.00410051 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+      <material name="standoff_8_material">
+        <color rgba="0.960784 0.835294 0.470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00989949 -0.00410051 0.0076" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/standoff.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from base to 4015_motor_assembly -->
+  <joint name="rightWheel" type="revolute">
+    <origin xyz="-0.055 0 -0.0299199" rpy="-3.14159 -1.5708 0"/>
+    <parent link="base"/>
+    <child link="4015_motor_assembly"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+</robot>

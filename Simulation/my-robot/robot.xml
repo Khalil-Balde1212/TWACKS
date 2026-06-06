@@ -1,0 +1,208 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/c31b75b69f86cba7a60e5fc7/w/78a9ece6d596751f738012d2/e/c7fa50fe5dc467a47ab74165 -->
+<mujoco model="my-robot">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <default>
+    <default class="my-robot">
+      <joint frictionloss="0.1" armature="0.005"/>
+      <position kp="50" dampratio="1"/>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="collision">
+        <geom group="3"/>
+      </default>
+    </default>
+  </default>
+  <worldbody>
+    <!-- Link base -->
+    <body name="base" pos="0 0 0" quat="1 0 0 0" childclass="my-robot">
+      <freejoint name="base_freejoint"/>
+      <inertial pos="0 0 0.100941" mass="0.2" fullinertia="7.44667e-05 0.000195467 0.0001291 -0 -0 -0"/>
+      <!-- Part right_mount -->
+      <geom type="mesh" class="visual" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="right_mount" material="right_mount_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="right_mount" material="right_mount_material"/>
+      <!-- Part bearing -->
+      <geom type="mesh" class="visual" pos="-0.055 0 -0.0299199" quat="0 0 0 1" mesh="bearing" material="bearing_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0 -0.0299199" quat="0 0 0 1" mesh="bearing" material="bearing_material"/>
+      <!-- Part part_1 -->
+      <geom type="mesh" class="visual" pos="0 -0.000288972 0.00708619" quat="0 0 0 1" mesh="part_1" material="part_1_material"/>
+      <geom type="mesh" class="collision" pos="0 -0.000288972 0.00708619" quat="0 0 0 1" mesh="part_1" material="part_1_material"/>
+      <!-- Part bearing_2 -->
+      <geom type="mesh" class="visual" pos="-0.16 0 -0.0299199" quat="-0 -0 0 1" mesh="bearing" material="bearing_material"/>
+      <geom type="mesh" class="collision" pos="-0.16 0 -0.0299199" quat="-0 -0 0 1" mesh="bearing" material="bearing_material"/>
+      <!-- Part bearing_3 -->
+      <geom type="mesh" class="visual" pos="-0.16 0.139 -0.0299199" quat="-0 -0 0 1" mesh="bearing" material="bearing_material"/>
+      <geom type="mesh" class="collision" pos="-0.16 0.139 -0.0299199" quat="-0 -0 0 1" mesh="bearing" material="bearing_material"/>
+      <!-- Part part_1_2 -->
+      <geom type="mesh" class="visual" pos="0 0.0491338 0.086117" quat="0.52783 -0.470527 -0.470527 -0.52783" mesh="part_1__2" material="part_1__2_material"/>
+      <geom type="mesh" class="collision" pos="0 0.0491338 0.086117" quat="0.52783 -0.470527 -0.470527 -0.52783" mesh="part_1__2" material="part_1__2_material"/>
+      <!-- Part rightpillar -->
+      <geom type="mesh" class="visual" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="rightpillar" material="rightpillar_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="rightpillar" material="rightpillar_material"/>
+      <!-- Part mcu_platform -->
+      <geom type="mesh" class="visual" pos="-0.055 0 -0.0299199" quat="0 -0 0 -1" mesh="mcu_platform" material="mcu_platform_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0 -0.0299199" quat="0 -0 0 -1" mesh="mcu_platform" material="mcu_platform_material"/>
+      <!-- Part bearing_4 -->
+      <geom type="mesh" class="visual" pos="-0.055 0.139 -0.0299199" quat="0 0 0 1" mesh="bearing" material="bearing_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0.139 -0.0299199" quat="0 0 0 1" mesh="bearing" material="bearing_material"/>
+      <!-- Part leftpillar -->
+      <geom type="mesh" class="visual" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="leftpillar" material="leftpillar_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="leftpillar" material="leftpillar_material"/>
+      <!-- Part base -->
+      <geom type="mesh" class="visual" pos="-0.055 0 -0.0299199" quat="0 0 0 1" mesh="base" material="base_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0 -0.0299199" quat="0 0 0 1" mesh="base" material="base_material"/>
+      <!-- Part left_mount -->
+      <geom type="mesh" class="visual" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="left_mount" material="left_mount_material"/>
+      <geom type="mesh" class="collision" pos="-0.055 0 -0.0299199" quat="-0 -0 0 1" mesh="left_mount" material="left_mount_material"/>
+      <!-- Part part_1_3 -->
+      <geom type="mesh" class="visual" pos="-0.033 0 0.0815252" quat="0 -1 -0 0" mesh="part_1__3" material="part_1__3_material"/>
+      <geom type="mesh" class="collision" pos="-0.033 0 0.0815252" quat="0 -1 -0 0" mesh="part_1__3" material="part_1__3_material"/>
+      <!-- Part 18650 -->
+      <geom type="mesh" class="visual" pos="0.033 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <geom type="mesh" class="collision" pos="0.033 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <!-- Part part_1_4 -->
+      <geom type="mesh" class="visual" pos="0.033 0 0.120357" quat="0 0 0 1" mesh="part_1__3" material="part_1__3_material"/>
+      <geom type="mesh" class="collision" pos="0.033 0 0.120357" quat="0 0 0 1" mesh="part_1__3" material="part_1__3_material"/>
+      <!-- Part 18650_2 -->
+      <geom type="mesh" class="visual" pos="-0.033 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <geom type="mesh" class="collision" pos="-0.033 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <!-- Part 18650_3 -->
+      <geom type="mesh" class="visual" pos="-0.011 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <geom type="mesh" class="collision" pos="-0.011 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <!-- Part 18650_4 -->
+      <geom type="mesh" class="visual" pos="0.011 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <geom type="mesh" class="collision" pos="0.011 0 0.100941" quat="0 -0 0.707107 -0.707107" mesh="18650" material="18650_material"/>
+      <!-- Link wheelhub -->
+      <body name="wheelhub" pos="0.055 0 -0.0299199" quat="0.470667 0.527705 0.470667 0.527705">
+        <!-- Joint from base to wheelhub -->
+        <joint axis="0 0 1" name="leftWheel" type="hinge"/>
+        <inertial pos="0 0 0" mass="1e-09" fullinertia="1e-09 1e-09 1e-09 0 0 0"/>
+        <!-- Part wheelhub -->
+        <geom type="mesh" class="visual" pos="0 -0 -0.006" quat="0.620031 -0 0 0.784577" mesh="wheelhub" material="wheelhub_material"/>
+        <geom type="mesh" class="collision" pos="0 -0 -0.006" quat="0.620031 -0 0 0.784577" mesh="wheelhub" material="wheelhub_material"/>
+        <!-- Part tire -->
+        <geom type="mesh" class="visual" pos="0 -0 -0.006" quat="0.620031 -0 0 0.784577" mesh="tire" material="tire_material"/>
+        <geom type="mesh" class="collision" pos="0 -0 -0.006" quat="0.620031 -0 0 0.784577" mesh="tire" material="tire_material"/>
+        <!-- Part standoff -->
+        <geom type="mesh" class="visual" pos="0.0238995 -0.00989949 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="0.0238995 -0.00989949 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+        <!-- Part standoff_2 -->
+        <geom type="mesh" class="visual" pos="-0.00410051 -0.00989949 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="-0.00410051 -0.00989949 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+        <!-- Part fixed -->
+        <geom type="mesh" class="visual" pos="0 0 0" quat="1 -0 0 -0" mesh="fixed" material="fixed_material"/>
+        <geom type="mesh" class="collision" pos="0 0 0" quat="1 -0 0 -0" mesh="fixed" material="fixed_material"/>
+        <!-- Part pcb -->
+        <geom type="mesh" class="visual" pos="0 0 -0.006" quat="0 -0.382683 0.92388 0" mesh="pcb" material="pcb_material"/>
+        <geom type="mesh" class="collision" pos="0 0 -0.006" quat="0 -0.382683 0.92388 0" mesh="pcb" material="pcb_material"/>
+        <!-- Part shaft -->
+        <geom type="mesh" class="visual" pos="0 -0 0" quat="0.873079 -0 -0 0.487579" mesh="shaft" material="shaft_material"/>
+        <geom type="mesh" class="collision" pos="0 -0 0" quat="0.873079 -0 -0 0.487579" mesh="shaft" material="shaft_material"/>
+        <!-- Part standoff_3 -->
+        <geom type="mesh" class="visual" pos="0.00989949 -0.0238995 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="0.00989949 -0.0238995 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+        <!-- Part standoff_4 -->
+        <geom type="mesh" class="visual" pos="0.00989949 0.00410051 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="0.00989949 0.00410051 -0.0076" quat="1 -0 -0 -0" mesh="standoff" material="standoff_material"/>
+      </body>
+      <!-- Link 4015_motor_assembly -->
+      <body name="4015_motor_assembly" pos="-0.055 0 -0.0299199" quat="0 -0.707107 -0 -0.707107">
+        <!-- Joint from base to 4015_motor_assembly -->
+        <joint axis="0 0 1" name="rightWheel" type="hinge"/>
+        <inertial pos="0 0 0" mass="1e-09" fullinertia="1e-09 1e-09 1e-09 0 0 0"/>
+        <!-- Part wheelhub_2 -->
+        <geom type="mesh" class="visual" pos="-0 0 0.006" quat="0 -0.969521 -0.245007 0" mesh="wheelhub" material="wheelhub_material"/>
+        <geom type="mesh" class="collision" pos="-0 0 0.006" quat="0 -0.969521 -0.245007 0" mesh="wheelhub" material="wheelhub_material"/>
+        <!-- Part tire_2 -->
+        <geom type="mesh" class="visual" pos="-0 0 0.006" quat="0 -0.969521 -0.245007 0" mesh="tire" material="tire_material"/>
+        <geom type="mesh" class="collision" pos="-0 0 0.006" quat="0 -0.969521 -0.245007 0" mesh="tire" material="tire_material"/>
+        <!-- Part standoff_5 -->
+        <geom type="mesh" class="visual" pos="0.0238995 0.00989949 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="0.0238995 0.00989949 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+        <!-- Part standoff_6 -->
+        <geom type="mesh" class="visual" pos="-0.00410051 0.00989949 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="-0.00410051 0.00989949 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+        <!-- Part fixed_2 -->
+        <geom type="mesh" class="visual" pos="0 0 0" quat="0 1 0 0" mesh="fixed" material="fixed_material"/>
+        <geom type="mesh" class="collision" pos="0 0 0" quat="0 1 0 0" mesh="fixed" material="fixed_material"/>
+        <!-- Part pcb_2 -->
+        <geom type="mesh" class="visual" pos="0 -0 0.006" quat="0.382683 -0 0 0.92388" mesh="pcb" material="pcb_material"/>
+        <geom type="mesh" class="collision" pos="0 -0 0.006" quat="0.382683 -0 0 0.92388" mesh="pcb" material="pcb_material"/>
+        <!-- Part shaft_2 -->
+        <geom type="mesh" class="visual" pos="-0 0 0" quat="0 0.597377 -0.801961 -0" mesh="shaft" material="shaft_material"/>
+        <geom type="mesh" class="collision" pos="-0 0 0" quat="0 0.597377 -0.801961 -0" mesh="shaft" material="shaft_material"/>
+        <!-- Part standoff_7 -->
+        <geom type="mesh" class="visual" pos="0.00989949 0.0238995 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="0.00989949 0.0238995 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+        <!-- Part standoff_8 -->
+        <geom type="mesh" class="visual" pos="0.00989949 -0.00410051 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+        <geom type="mesh" class="collision" pos="0.00989949 -0.00410051 0.0076" quat="0 -1 -0 -0" mesh="standoff" material="standoff_material"/>
+      </body>
+      <!-- Link roller -->
+      <body name="roller" pos="-0.05 0.0695 -0.0163521" quat="0.5 0.5 -0.5 -0.5">
+        <!-- Joint from base to roller -->
+        <joint axis="0 0 1" name="passive_rear" type="hinge"/>
+        <inertial pos="0 0 0" mass="1e-09" fullinertia="1e-09 1e-09 1e-09 0 0 0"/>
+        <!-- Part roller -->
+        <geom type="mesh" class="visual" pos="0.0695 -0.0135677 0.0055" quat="0.5 -0.5 -0.5 -0.5" mesh="roller" material="roller_material"/>
+        <geom type="mesh" class="collision" pos="0.0695 -0.0135677 0.0055" quat="0.5 -0.5 -0.5 -0.5" mesh="roller" material="roller_material"/>
+      </body>
+      <!-- Link roller_2 -->
+      <body name="roller_2" pos="-0.05 -0.0695 -0.0163521" quat="0.689053 -0.158762 -0.689053 0.158762">
+        <!-- Joint from base to roller_2 -->
+        <joint axis="0 0 1" name="passive_front" type="hinge"/>
+        <inertial pos="0 0 0" mass="1e-09" fullinertia="1e-09 1e-09 1e-09 0 0 0"/>
+        <!-- Part roller_2 -->
+        <geom type="mesh" class="visual" pos="0.0695 -0.0135677 0.0055" quat="0.5 -0.5 -0.5 -0.5" mesh="roller" material="roller_material"/>
+        <geom type="mesh" class="collision" pos="0.0695 -0.0135677 0.0055" quat="0.5 -0.5 -0.5 -0.5" mesh="roller" material="roller_material"/>
+      </body>
+    </body>
+  </worldbody>
+  <asset>
+    <mesh file="part_1.stl"/>
+    <mesh file="shaft.stl"/>
+    <mesh file="part_1__2.stl"/>
+    <mesh file="18650.stl"/>
+    <mesh file="wheelhub.stl"/>
+    <mesh file="mcu_platform.stl"/>
+    <mesh file="right_mount.stl"/>
+    <mesh file="base.stl"/>
+    <mesh file="standoff.stl"/>
+    <mesh file="fixed.stl"/>
+    <mesh file="roller.stl"/>
+    <mesh file="rightpillar.stl"/>
+    <mesh file="tire.stl"/>
+    <mesh file="leftpillar.stl"/>
+    <mesh file="part_1__3.stl"/>
+    <mesh file="pcb.stl"/>
+    <mesh file="bearing.stl"/>
+    <mesh file="left_mount.stl"/>
+    <material name="right_mount_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="bearing_material" rgba="0.701961 0.701961 0.701961 1"/>
+    <material name="part_1_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="part_1__2_material" rgba="0.301961 0.301961 0.301961 1"/>
+    <material name="rightpillar_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="mcu_platform_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="leftpillar_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="base_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="left_mount_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="part_1__3_material" rgba="0.301961 0.301961 0.301961 1"/>
+    <material name="18650_material" rgba="0.85098 0.756863 0.866667 1"/>
+    <material name="wheelhub_material" rgba="0.917647 0.917647 0.917647 1"/>
+    <material name="tire_material" rgba="0.301961 0.301961 0.301961 1"/>
+    <material name="standoff_material" rgba="0.960784 0.835294 0.470588 1"/>
+    <material name="fixed_material" rgba="0.262745 0.282353 0.301961 1"/>
+    <material name="pcb_material" rgba="0 0 1 1"/>
+    <material name="shaft_material" rgba="0.262745 0.282353 0.301961 1"/>
+    <material name="roller_material" rgba="0.917647 0.917647 0.917647 1"/>
+  </asset>
+  <actuator>
+    <position class="my-robot" name="leftWheel" joint="leftWheel"/>
+    <position class="my-robot" name="rightWheel" joint="rightWheel"/>
+    <position class="my-robot" name="passive_rear" joint="passive_rear"/>
+    <position class="my-robot" name="passive_front" joint="passive_front"/>
+  </actuator>
+  <equality/>
+</mujoco>
