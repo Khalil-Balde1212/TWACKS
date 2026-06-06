@@ -1,3 +1,4 @@
 mujoco>=3.2.0
 numpy>=1.24.0
 onshape_to_robot>=1.8.2
+matplotlib>=3.8.0
