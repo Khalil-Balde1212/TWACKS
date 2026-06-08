@@ -6,12 +6,16 @@ class firmware:
     def __init__(self, model: mujoco.MjModel, data: mujoco.MjData) -> None:
         self.left_wheel_target = 0.0
         self.right_wheel_target = 0.0
+        self.max_speed = 20.0
         self.model = model
         self.data = data
 
     def setTargetSpeeds(self, left_speed: float, right_speed: float) -> None:
         self.left_wheel_target += left_speed * self.model.opt.timestep
         self.right_wheel_target += right_speed * self.model.opt.timestep
+
+        self.left_wheel_target = max(-self.max_speed, min(self.max_speed, self.left_wheel_target))
+        self.right_wheel_target = max(-self.max_speed, min(self.max_speed, self.right_wheel_target))
 
         self.data.ctrl[0] = self.left_wheel_target
         self.data.ctrl[1] = self.right_wheel_target

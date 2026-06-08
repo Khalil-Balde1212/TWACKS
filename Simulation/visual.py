@@ -21,8 +21,8 @@ def main() -> None:
         while viewer.is_running():
             step_start = time.time()
 
-            mujoco.mj_step(model, data)
             onboardBalanceControl.run(robot_firmware)
+            mujoco.mj_step(model, data)
 
             # Synchronize with real time. Not sim time
             viewer.sync()
